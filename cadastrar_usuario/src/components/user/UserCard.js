@@ -2,6 +2,7 @@ import Home from "../pages/Home";
 import { useState, useEffect } from "react";
 import { FaUsers } from "react-icons/fa";
 import {RiDeleteBin6Fill } from "react-icons/ri";
+import './UserCard.css'
 
 import React from "react";
 import { useFetch } from "../../hooks/useFetch";
@@ -42,7 +43,7 @@ const UserCard = () => {
       />
       <main className="content container-fluid">
         <div className="p-3 mt-3">
-          <p className="mb-0">Cadastro do Usuário</p>
+          <p className="mb-0">Usuários cadastrados no sistema</p>
         </div>
 
         <form className="form" onSubmit={handlerSubmit}>
@@ -100,7 +101,7 @@ const UserCard = () => {
               <td>{user.name}</td>
               <td>{user.email}</td>
               <td>
-              <button onClick={() => handleRemove(user.id)} variant="danger">
+              <button onClick={() => handleRemove(user.id)} className="btn-delete">
                   <RiDeleteBin6Fill/>
                 </button>
               </td>
